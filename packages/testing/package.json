@@ -1,0 +1,17 @@
+{
+  "name": "@thenine/testing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./group-fixtures": "./src/group-fixtures.ts",
+    "./invariant-inventory": "./src/invariant-inventory.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --passWithNoTests"
+  }
+}

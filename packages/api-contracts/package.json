@@ -1,0 +1,19 @@
+{
+  "name": "@thenine/api-contracts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./availability": "./src/availability.ts",
+    "./launchpad": "./src/launchpad.ts",
+    "./route-invariants": "./src/route-invariants.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --passWithNoTests",
+    "test:contract": "vitest run src/availability-contract.test.ts src/launchpad-contract.test.ts src/route-invariants.test.ts"
+  }
+}

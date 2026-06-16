@@ -1,0 +1,32 @@
+{
+  "name": "@thenine/domain",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./action-queue": "./src/action-queue.ts",
+    "./analytics": "./src/analytics.ts",
+    "./availability-mesh": "./src/availability-mesh.ts",
+    "./conversation-thread": "./src/conversation-thread.ts",
+    "./debrief-learning-consent": "./src/debrief-learning-consent.ts",
+    "./debrief": "./src/debrief.ts",
+    "./group-formation": "./src/group-formation.ts",
+    "./group-eligibility": "./src/group-eligibility.ts",
+    "./launchpad-readiness": "./src/launchpad-readiness.ts",
+    "./plan": "./src/plan.ts",
+    "./plan-fast-track": "./src/plan-fast-track.ts",
+    "./safety": "./src/safety.ts",
+    "./staff-access": "./src/staff-access.ts",
+    "./verification": "./src/verification.ts"
+  },
+  "dependencies": {
+    "@thenine/testing": "workspace:*"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run",
+    "test:unit": "vitest run"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@thenine/api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@thenine/api-contracts": "workspace:*",
+    "@thenine/domain": "workspace:*",
+    "fastify": "^5.8.5",
+    "pg": "^8.21.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "test": "vitest run --passWithNoTests",
+    "test:unit": "vitest run --passWithNoTests",
+    "test:integration": "vitest run src/*-route.test.ts src/p0-smoke.e2e.test.ts",
+    "test:e2e": "vitest run src/p0-smoke.e2e.test.ts"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0"
+  }
+}

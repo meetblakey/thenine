@@ -1,0 +1,7 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/testing" },
+    { "path": "./packages/domain" }
+  ]
+}

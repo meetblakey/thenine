@@ -1,0 +1,5 @@
+# API App
+
+TypeScript API boundary for the first P0 slice. Domain-first route handlers are implemented as framework-neutral functions, and provider-backed HTTP ingress is being wired into the Fastify runtime path slice by slice before the full NestJS module shell is introduced.
+
+Current runtime evidence includes `createApiFastifyApp`, which mounts `/healthz` and the Persona webhook Fastify route. `createApiFastifyAppFromRuntimeConfig` composes that shell from a resolved `PERSONA_WEBHOOK_SECRET`, runtime clock/id generators, and a Postgres query client. `createApiProductionApp` reads `DATABASE_URL`, creates a node-postgres pool-backed query client, uses a UUIDv7 runtime id generator, and closes the pool with the Fastify app. The Persona route captures the exact raw JSON request body and validates the `Persona-Signature` header before provider normalization. `createPersonaWebhookPostgresPersistence` supplies the DB-backed webhook replay, verification-case lookup, member status update, and outbox persistence ports for that route.
