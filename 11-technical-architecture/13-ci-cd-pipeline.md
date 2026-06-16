@@ -62,6 +62,7 @@ flowchart TD
 | `pnpm test:migration` | Database schema and initial migration guardrails in `packages/db`. |
 | `pnpm test:e2e` | P0 smoke path from Launchpad eligibility through group chat, Plan, RSVP, debrief consent, action queue, and notification source-event enforcement. |
 | `pnpm test` | Full workspace test sweep used as the broad regression gate. |
+| `pnpm --filter @thenine/api build` | API package production compile that emits `dist/server.js` for the container start command. |
 
 ## Migration Strategy
 
@@ -84,7 +85,7 @@ Rules:
 
 | Artifact | Required Metadata |
 |---|---|
-| API image | Git SHA, migration version, OpenAPI version, build timestamp. |
+| API image | Git SHA, migration version, OpenAPI version, build timestamp, start command `node dist/server.js`. |
 | Worker image | Git SHA, queue contract version, build timestamp. |
 | Mobile build | Git SHA, app version, runtime version, environment, native SDK versions. |
 | Terraform plan | Workspace, account, changed resources, approval record. |

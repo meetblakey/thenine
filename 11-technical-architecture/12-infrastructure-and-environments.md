@@ -95,7 +95,7 @@ export interface RuntimeConfig {
 }
 ```
 
-Secrets are referenced by name in app config and resolved at runtime through AWS IAM. The API production app consumes `DATABASE_URL` to create its node-postgres pool and consumes the resolved Persona webhook secret as `PERSONA_WEBHOOK_SECRET` when composing the Fastify runtime.
+Secrets are referenced by name in app config and resolved at runtime through AWS IAM. The API production app consumes `DATABASE_URL` to create its node-postgres pool and consumes the resolved Persona webhook secret as `PERSONA_WEBHOOK_SECRET` when composing the Fastify runtime. The API package build command is `pnpm --filter @thenine/api build`; the container start command should run `node dist/server.js` with `HOST` defaulting to `0.0.0.0` and `PORT` defaulting to `3000`.
 
 ## Network Rules
 
